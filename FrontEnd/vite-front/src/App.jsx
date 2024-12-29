@@ -5,6 +5,7 @@ import Profile from './pages/Profile/Profile.jsx'
 import Start from './pages/Start/Start.jsx'
 import Login from './pages/Login/Login.jsx'
 import Signin from './pages/Signin/Signin.jsx'
+import Quiz from './pages/Quiz/Quiz.jsx'
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
             <Route path='/profile' element={<Profile/>}/>
             <Route path='/login' element={<Login/>}/>
             <Route path='/signin' element={<Signin/>}/>
+            <Route path='/quiz' element={<Quiz/>}/>
           </Routes>
       </div>
   )
