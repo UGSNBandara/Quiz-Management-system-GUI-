@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+
+\WebApllication\BackEnd\django_BackEnd\venv
