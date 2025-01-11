@@ -1,0 +1,82 @@
+body {
+  background-color: black;
+  background-size: cover;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1{
+    color: aliceblue;
+    font-size: 50px;
+}
+
+p{
+    color: aliceblue;
+    font-size: 15px;
+}
+
+/* Main container for centering the content */
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+
+  }
+
+  .button-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px; 
+  }
+
+  .button-bar button {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    background-color: #8354c8;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button-bar button:hover {
+    background-color: #7131e7;
+  }
+
+
+  .animated-image1 {
+    position: absolute;
+    top: 15%; /* Position image vertically, adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px; /* Set image size */
+    animation: rotateVibrate 1s infinite ease-in-out;
+  }
+  
+  @keyframes rotateVibrate {
+    0% {
+      transform: translateX(-50%) rotate(0deg);
+    }
+    25% {
+      transform: translateX(-50%) rotate(3deg); /* Small rotation */
+    }
+    50% {
+      transform: translateX(-50%) rotate(-3deg); /* Small opposite rotation */
+    }
+    75% {
+      transform: translateX(-50%) rotate(3deg); /* Small rotation again */
+    }
+    100% {
+      transform: translateX(-50%) rotate(0deg); /* Return to original position */
+    }
+  }
