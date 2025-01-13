@@ -1,25 +1,71 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace Quiz_GUI.Models
 {
-    public class Player
+    public class Player : INotifyPropertyChanged
     {
-        public string Username { get; }
-        public string Email { get; }
-        public string FullName { get; }
-        public int Score { get; }
-        public int Rank { get; }
+        private string _username;
+        private string _email;
+        private string _fullName;
+        private int _score;
+        private int _rank;
 
-        public Player(string username, string email, string fullname, int rank, int score) {
-            Username = username;
-            Email = email;
-            FullName = fullname;
-            Score = score;
-            Rank = rank;
+        public string Username
+        {
+            get => _username;
+            set => SetProperty(ref _username, value);
+        }
+
+        public string Email
+        {
+            get => _email;
+            set => SetProperty(ref _email, value);
+        }
+
+        public string FullName
+        {
+            get => _fullName;
+            set => SetProperty(ref _fullName, value);
+        }
+
+        public int Score
+        {
+            get => _score;
+            set => SetProperty(ref _score, value);
+        }
+
+        public int Rank
+        {
+            get => _rank;
+            set => SetProperty(ref _rank, value);
+        }
+
+        // Constructor
+        public Player(string username, string email, string fullName, int rank, int score)
+        {
+            _username = username;
+            _email = email;
+            _fullName = fullName;
+            _rank = rank;
+            _score = score;
+        }
+
+        // INotifyPropertyChanged Implementation
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        private void SetProperty<T>(ref T field, T value, [CallerMemberName] string propertyName = null)
+        {
+            if (!Equals(field, value))
+            {
+                field = value;
+                OnPropertyChanged(propertyName);
+            }
         }
     }
 }

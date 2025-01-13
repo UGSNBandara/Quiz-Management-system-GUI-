@@ -7,6 +7,7 @@
         xmlns:views="clr-namespace:Quiz_GUI.Views"
         mc:Ignorable="d"
         Title="Quizify" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen"
         FontSize="14"
         >
 

@@ -12,91 +12,133 @@
             BorderThickness="1"
             SnapsToDevicePixels="True"
             CornerRadius="5">
-            <Grid Grid.IsSharedSizeScope="True">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                </Grid.RowDefinitions>
-
+            <Grid>
+                <Grid>
+                    <Grid.Style>
+                        <Style TargetType="Grid">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding HasSelectedPlayer}" Value="False">
+                                    <Setter Property="Visibility" Value="Visible"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Grid.Style>
                 <TextBlock 
+                    FontSize="20"
+                    TextWrapping="WrapWithOverflow"
+                    Text="Please select a Youtube viewer to see thier details"/>
+            </Grid>
+
+                <Grid Grid.IsSharedSizeScope="True">
+                    <Grid.Style>
+                        <Style TargetType="Grid">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding HasSelectedPlayer}" Value="True">
+                                    <Setter Property="Visibility" Value="Visible"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Grid.Style>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock 
                     Grid.Row="0"
                     FontSize="16"
                     Padding="20 10 0 10"
                     FontWeight="Bold"
                     Text="{Binding UserName}"/>
 
-                <Grid Grid.Row="1">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="auto" SharedSizeGroup="Label"/>
-                        <ColumnDefinition Width="auto"/>
-                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto" SharedSizeGroup="Label"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
 
-                    <TextBlock
+                        <TextBlock
                         Grid.Column="0"
                         FontWeight="Bold"
                         Padding="20 8 0 8"
                         Text="Total marks"/>
-                    <TextBlock
+                        <TextBlock
                         Grid.Column="1"
                         Padding="20 8 0 8"
                         Text="{Binding Score}"/>
-                </Grid>
+                    </Grid>
 
-                <Grid Grid.Row="2">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="auto" SharedSizeGroup="Label"/>
-                        <ColumnDefinition Width="auto"/>
-                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto" SharedSizeGroup="Label"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
 
-                    <TextBlock
+                        <TextBlock
                         Grid.Column="0"
                         FontWeight="Bold"
                         Padding="20 10 0 8"
                         Text="Rank"/>
-                    <TextBlock
+                        <TextBlock
                         Grid.Column="1"
                         Padding="20 10 0 8"
                         Text="{Binding Rank}"/>
-                </Grid>
+                    </Grid>
 
-                <Grid Grid.Row="3">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="auto" SharedSizeGroup="Label"/>
-                        <ColumnDefinition Width="auto"/>
-                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Row="3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto" SharedSizeGroup="Label"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
 
-                    <TextBlock
+                        <TextBlock
                         Grid.Column="0"
                         FontWeight="Bold"
                         Padding="20 10 0 8"
                         Text="Email"/>
-                    <TextBlock
+                        <TextBlock
                         Grid.Column="1"
                         Padding="20 10 0 8"
                         Text="{Binding Email}"/>
-                </Grid>
-                
-                <Grid Grid.Row="4">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="auto" SharedSizeGroup="Label"/>
-                        <ColumnDefinition Width="auto"/>
-                    </Grid.ColumnDefinitions>
+                    </Grid>
 
-                    <TextBlock
+                    <Grid Grid.Row="4">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto" SharedSizeGroup="Label"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock
                         Grid.Column="0"
                         FontWeight="Bold"
                         Padding="20 10 0 8"
                         Text="Full Name"/>
-                    <TextBlock
+                        <TextBlock
                         Grid.Column="1"
                         Padding="20 10 0 8"
                         Text="{Binding FullName}"/>
-                </Grid>
+                    </Grid>
 
+                    <Grid Grid.Row="5">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                            <Button
+                                Content="Edit Player" 
+                                Command="{Binding EditCommand}" 
+                                Margin="10" />
+                                                <Button
+                                Content="Delete" 
+                                Command="{Binding DeleteCommand}" 
+                                Margin="10" />
+                        </StackPanel>
+
+                    </Grid>
+                </Grid>
             </Grid>
         </Border>  
     </Grid>

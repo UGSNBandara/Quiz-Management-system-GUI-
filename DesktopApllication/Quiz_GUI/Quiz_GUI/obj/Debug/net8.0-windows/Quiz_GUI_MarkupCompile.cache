@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 D:\quizify\DesktopApllication\Quiz_GUI\Quiz_GUI\App.xaml
-4-1351439219
+8-1979950133
 
-142133422362
-199307810330
-Components\PlayerDetails.xaml;Components\PlayerList.xaml;MainWindow.xaml;Views\PlayersViewer.xaml;
+221088635422
+215-1569079752
+AddPlayerWindow.xaml;Components\PlayerDetails.xaml;Components\PlayerDetailsForm.xaml;Components\PlayerList.xaml;EditPlayerWindow.xaml;MainWindow.xaml;Views\EditPlayerViewer.xaml;Views\PlayersViewer.xaml;
 
 False
 

@@ -11,16 +11,18 @@ namespace Quiz_GUI
     public partial class App : Application
     {
         private readonly SelectedPlayerStores _SelectedPlayerStores;
+        private readonly PlayerListStore _PlayerListStore;
 
         public App()
         {
             _SelectedPlayerStores = new SelectedPlayerStores();
+            _PlayerListStore = new PlayerListStore();
         }
         protected override void OnStartup(StartupEventArgs e)
         {
             MainWindow mainWindow = new MainWindow()
             {
-                DataContext = new ViewModels.PlayerViewModel(_SelectedPlayerStores)
+                DataContext = new ViewModels.PlayerViewModel(_SelectedPlayerStores, _PlayerListStore)
             };
             mainWindow.Show();
             base.OnStartup(e);

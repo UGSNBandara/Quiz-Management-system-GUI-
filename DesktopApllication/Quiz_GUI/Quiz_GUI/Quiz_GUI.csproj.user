@@ -7,10 +7,22 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="AddPlayerWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Components\PlayerDetails.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Components\PlayerDetailsForm.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Components\PlayerList.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="EditPlayerWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\EditPlayerViewer.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\PlayersViewer.xaml.cs">
@@ -18,13 +30,25 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="AddPlayerWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Components\PlayerDetails.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Components\PlayerDetailsForm.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Components\PlayerList.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="EditPlayerWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\EditPlayerViewer.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\PlayersViewer.xaml">

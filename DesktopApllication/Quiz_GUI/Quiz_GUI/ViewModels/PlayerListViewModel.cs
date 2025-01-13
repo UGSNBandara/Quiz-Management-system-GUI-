@@ -2,11 +2,14 @@
 using Quiz_GUI.Stores;
 using Quiz_GUI.ViewModels;
 using System.Collections.ObjectModel;
+using System.Linq;
 
 public class PlayerListViewModel : ViewModelBase
 {
     private readonly SelectedPlayerStores _selectedPlayerStores;
+    private readonly PlayerListStore _playerListStore; 
     private readonly ObservableCollection<PlayerListItemViewModel> _players;
+
     public IEnumerable<PlayerListItemViewModel> Players => _players;
 
     private PlayerListItemViewModel _selectedPlayer;
@@ -22,30 +25,66 @@ public class PlayerListViewModel : ViewModelBase
             {
                 _selectedPlayerStores.selectedPlayer = new Player(
                     _selectedPlayer.Username,
-                    _selectedPlayer.Email, 
-                    _selectedPlayer.FullName,          
-                    _selectedPlayer.Rank,                    
-                    _selectedPlayer.Score                   
+                    _selectedPlayer.Email,
+                    _selectedPlayer.FullName,
+                    _selectedPlayer.Rank,
+                    _selectedPlayer.Score
                 );
             }
         }
     }
 
-    public PlayerListViewModel(SelectedPlayerStores selectedPlayerStores)
+    // Updated Constructor
+    public PlayerListViewModel(SelectedPlayerStores selectedPlayerStores, PlayerListStore playerListStore)
     {
         _selectedPlayerStores = selectedPlayerStores;
-        _players = new ObservableCollection<PlayerListItemViewModel>
+        _playerListStore = playerListStore;
+
+        _players = new ObservableCollection<PlayerListItemViewModel>(
+            _playerListStore.Players.Select(p => new PlayerListItemViewModel(
+                p.Username, p.Email, p.FullName, p.Score, p.Rank, this)));
+
+        _playerListStore.PlayerListChanged += OnPlayerListChanged; // Subscribe to event
+    }
+
+
+    // Synchronize _players with PlayerListStore
+    private void OnPlayerListChanged()
+    {
+        _players.Clear();
+        foreach (var player in _playerListStore.Players)
         {
-            new PlayerListItemViewModel("Leo123", "leo.martin@gmail.com", "Leonardo Martin", 1500, 1),
-            new PlayerListItemViewModel("EmmaW", "emma.watson@yahoo.com", "Emma Watson", 1450, 2),
-            new PlayerListItemViewModel("Sophia_R", "sophia.roberts@outlook.com", "Sophia Roberts", 1400, 3),
-            new PlayerListItemViewModel("EthanB", "ethan.bennett@aol.com", "Ethan Bennett", 1350, 4),
-            new PlayerListItemViewModel("AvaK", "ava.king@hotmail.com", "Ava King", 1300, 5),
-            new PlayerListItemViewModel("LiamP", "liam.perez@gmail.com", "Liam Perez", 1250, 6),
-            new PlayerListItemViewModel("IsabellaF", "isabella.foster@yahoo.com", "Isabella Foster", 1200, 7),
-            new PlayerListItemViewModel("NoahH", "noah.harris@outlook.com", "Noah Harris", 1150, 8),
-            new PlayerListItemViewModel("MiaC", "mia.collins@gmail.com", "Mia Collins", 1100, 9),
-            new PlayerListItemViewModel("OliverJ", "oliver.james@protonmail.com", "Oliver James", 1050, 10)
-        };
+            _players.Add(new PlayerListItemViewModel(
+                player.Username, player.Email, player.FullName, player.Score, player.Rank, this));
+        }
+    }
+
+
+    public void AddPlayer(PlayerListItemViewModel player)
+    {
+        var newPlayer = new Player(player.Username, player.Email, player.FullName, player.Rank, player.Score);
+        _playerListStore.AddPlayer(newPlayer); // Update store
+    }
+
+    public void RemovePlayer(PlayerListItemViewModel player)
+    {
+        var existingPlayer = _playerListStore.Players.FirstOrDefault(p =>
+            p.Username == player.Username &&
+            p.Email == player.Email &&
+            p.FullName == player.FullName &&
+            p.Score == player.Score &&
+            p.Rank == player.Rank);
+
+        if (existingPlayer != null)
+        {
+            _playerListStore.RemovePlayer(existingPlayer);
+            SelectedPlayer = null;// Update store
+        }
+    }
+
+    protected override void Dispose()
+    {
+        _playerListStore.PlayerListChanged -= OnPlayerListChanged;
+        base.Dispose();
     }
 }

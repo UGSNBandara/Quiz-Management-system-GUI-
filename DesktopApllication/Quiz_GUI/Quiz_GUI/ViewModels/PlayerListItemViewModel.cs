@@ -16,6 +16,19 @@ namespace Quiz_GUI.ViewModels
 
         public ICommand DeleteCommand { get; }
         public ICommand EditCommand { get; }
+        private readonly PlayerListViewModel _playerListViewModel;
+
+        public PlayerListItemViewModel(string username, string email, string fullName, int score, int rank, PlayerListViewModel playerListViewModel)
+        {
+            Username = username;
+            Email = email;
+            FullName = fullName;
+            Score = score;
+            Rank = rank;
+            _playerListViewModel = playerListViewModel;
+
+            DeleteCommand = new RelayCommand(DeletePlayer);
+        }
 
         public PlayerListItemViewModel(string username, string email, string fullName, int score, int rank)
         {
@@ -24,6 +37,12 @@ namespace Quiz_GUI.ViewModels
             FullName = fullName;
             Score = score;
             Rank = rank;
+        }
+
+        private void DeletePlayer(object parameter)
+        {
+            // Call the RemovePlayer method to remove the current player from the list
+            _playerListViewModel.RemovePlayer(this);
         }
 
     }
