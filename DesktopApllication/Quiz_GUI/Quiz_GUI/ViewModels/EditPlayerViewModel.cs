@@ -1,6 +1,8 @@
 ﻿using Quiz_GUI.Models;
+using Quiz_GUI.Stores;
 using System;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 
@@ -8,44 +10,70 @@ namespace Quiz_GUI.ViewModels
 {
     public class EditPlayerViewModel : ViewModelBase
     {
-        public Player Player { get; }
-        private readonly PlayerDetailsViewModel _playerDetailsViewModel;
+        private readonly PlayerListStore _playerListStore;
 
+
+        // Bound Player Property
+        public Player Player { get; }
+        public PlayerDetailsViewModel PlayerDetails { get; }
+
+        // Bound Error Message Property
+        private string _errorMessage;
+        public string ErrorMessage
+        {
+            get => _errorMessage;
+            set
+            {
+                _errorMessage = value;
+                OnPropertyChanged(nameof(ErrorMessage));
+            }
+        }
+
+        // Commands
         public ICommand SaveCommand { get; }
         public ICommand CancelCommand { get; }
 
-        public EditPlayerViewModel(Player player, PlayerDetailsViewModel playerDetailsViewModel)
+        public EditPlayerViewModel(Player player,  PlayerListStore playerListStore, PlayerDetailsViewModel playerDetails)
         {
-            Player = player ?? throw new ArgumentNullException(nameof(player));
-            _playerDetailsViewModel = playerDetailsViewModel ?? throw new ArgumentNullException(nameof(playerDetailsViewModel));
+            _playerListStore = playerListStore;
 
-            SaveCommand = new RelayCommand(Save);
-            CancelCommand = new RelayCommand(Cancel);
+            Player = new Player(player.Username, player.Email, player.FullName, player.Rank, player.Score);
+
+            SaveCommand = new RelayCommand(async () => await SavePlayer());
+            CancelCommand = new RelayCommand(CloseWindow);
+            PlayerDetails = playerDetails;
         }
 
-        private void Save(object parameter)
+        // Save Player Logic
+        private async Task SavePlayer()
         {
-            // Notify PlayerDetailsViewModel of the change
-            _playerDetailsViewModel.UpdatePlayerDetails();
+            try
+            {
+                // Simulate saving to the database or data store
+                _playerListStore.UpdatePlayer(Player);
 
-            // Close the window and mark the operation as successful
-            CloseWindow();
+                // Clear error message on successful save
+                ErrorMessage = string.Empty;
+                PlayerDetails.UpdatePlayerDetails();
+
+                // Close the edit window after saving
+                CloseWindow();
+            }
+            catch (Exception ex)
+            {
+                ErrorMessage = $"Error: {ex.Message}";
+            }
         }
 
-        private void Cancel(object parameter)
-        {
-            // Simply close the window without saving changes
-            CloseWindow();
-        }
+        // Validation for enabling Save Button
 
+
+        // Close the Window Logic
         private void CloseWindow()
         {
-            // Try to find and close the currently active window (EditPlayerWindow)
-            var window = Application.Current.Windows.OfType<Window>().SingleOrDefault(w => w.IsActive);
-            if (window != null)
-            {
-                window.Close();
-            }
+            // Find the window with this ViewModel as its DataContext and close it
+            var window = Application.Current.Windows.OfType<Window>().FirstOrDefault(w => w.DataContext == this);
+            window?.Close();
         }
     }
 }

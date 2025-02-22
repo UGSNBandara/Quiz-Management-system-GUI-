@@ -29,7 +29,7 @@ namespace Quiz_GUI.ViewModels
 
             _SelectedPlayerStores.SelectedPlayerChanged += SelectedPlayerStores_SlectedPlayerChanged;
 
-            EditCommand = new RelayCommand(EditPlayerDetails);
+           EditCommand = new RelayCommand(EditPlayerDetails);
             DeleteCommand = new RelayCommand(DeletePlayerDetails, CanDeletePlayerDetails);
         }
 
@@ -49,14 +49,14 @@ namespace Quiz_GUI.ViewModels
             OnPropertyChanged(nameof(Rank));
             OnPropertyChanged(nameof(Score));
         }
-
+        
         private void EditPlayerDetails(object parameter)
         {
             if (SelectedPlayer != null)
             {
                 // Pass the current instance of PlayerDetailsViewModel to EditPlayerViewModel
-                var editPlayerViewModel = new EditPlayerViewModel(SelectedPlayer, this);
-                var editPlayerView = new EditPlayerWindow { DataContext = editPlayerViewModel };
+                var editPlayerViewModel = new EditPlayerViewModel(SelectedPlayer, _playerListStore, this);
+                var editPlayerView = new EditPlayerWindow( SelectedPlayer,this, _playerListStore );
 
                 // Open the window as a dialog
                 editPlayerView.ShowDialog();
@@ -98,6 +98,7 @@ namespace Quiz_GUI.ViewModels
 
         public void UpdatePlayerDetails()
         {
+            _SelectedPlayerStores.selectedPlayer = null;
             // Manually trigger the property change notifications to update the UI
             OnPropertyChanged(nameof(UserName));
             OnPropertyChanged(nameof(FullName));

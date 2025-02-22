@@ -1,7 +1,32 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\quizify\\DesktopApllication\\Quiz_GUI\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{08E5B93C-5BBD-4671-A9B9-509C6869D3E7}|Quiz_GUI\\Quiz_GUI.csproj|d:\\quizify\\desktopapllication\\quiz_gui\\quiz_gui\\components\\playerlist.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{08E5B93C-5BBD-4671-A9B9-509C6869D3E7}|Quiz_GUI\\Quiz_GUI.csproj|solutionrelative:quiz_gui\\components\\playerlist.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{08E5B93C-5BBD-4671-A9B9-509C6869D3E7}|Quiz_GUI\\Quiz_GUI.csproj|d:\\quizify\\desktopapllication\\quiz_gui\\quiz_gui\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{08E5B93C-5BBD-4671-A9B9-509C6869D3E7}|Quiz_GUI\\Quiz_GUI.csproj|solutionrelative:quiz_gui\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{08E5B93C-5BBD-4671-A9B9-509C6869D3E7}|Quiz_GUI\\Quiz_GUI.csproj|d:\\quizify\\desktopapllication\\quiz_gui\\quiz_gui\\components\\playerdetails.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{08E5B93C-5BBD-4671-A9B9-509C6869D3E7}|Quiz_GUI\\Quiz_GUI.csproj|solutionrelative:quiz_gui\\components\\playerdetails.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{08E5B93C-5BBD-4671-A9B9-509C6869D3E7}|Quiz_GUI\\Quiz_GUI.csproj|d:\\quizify\\desktopapllication\\quiz_gui\\quiz_gui\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{08E5B93C-5BBD-4671-A9B9-509C6869D3E7}|Quiz_GUI\\Quiz_GUI.csproj|solutionrelative:quiz_gui\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{08E5B93C-5BBD-4671-A9B9-509C6869D3E7}|Quiz_GUI\\Quiz_GUI.csproj|d:\\quizify\\desktopapllication\\quiz_gui\\quiz_gui\\views\\playersviewer.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{08E5B93C-5BBD-4671-A9B9-509C6869D3E7}|Quiz_GUI\\Quiz_GUI.csproj|solutionrelative:quiz_gui\\views\\playersviewer.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{08E5B93C-5BBD-4671-A9B9-509C6869D3E7}|Quiz_GUI\\Quiz_GUI.csproj|d:\\quizify\\desktopapllication\\quiz_gui\\quiz_gui\\views\\editplayerviewer.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{08E5B93C-5BBD-4671-A9B9-509C6869D3E7}|Quiz_GUI\\Quiz_GUI.csproj|solutionrelative:quiz_gui\\views\\editplayerviewer.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -18,6 +43,78 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PlayerList.xaml",
+              "DocumentMoniker": "D:\\quizify\\DesktopApllication\\Quiz_GUI\\Quiz_GUI\\Components\\PlayerList.xaml",
+              "RelativeDocumentMoniker": "Quiz_GUI\\Components\\PlayerList.xaml",
+              "ToolTip": "D:\\quizify\\DesktopApllication\\Quiz_GUI\\Quiz_GUI\\Components\\PlayerList.xaml",
+              "RelativeToolTip": "Quiz_GUI\\Components\\PlayerList.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-01-13T17:59:35.355Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "App.xaml",
+              "DocumentMoniker": "D:\\quizify\\DesktopApllication\\Quiz_GUI\\Quiz_GUI\\App.xaml",
+              "RelativeDocumentMoniker": "Quiz_GUI\\App.xaml",
+              "ToolTip": "D:\\quizify\\DesktopApllication\\Quiz_GUI\\Quiz_GUI\\App.xaml",
+              "RelativeToolTip": "Quiz_GUI\\App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-01-13T16:31:55.549Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PlayersViewer.xaml",
+              "DocumentMoniker": "D:\\quizify\\DesktopApllication\\Quiz_GUI\\Quiz_GUI\\Views\\PlayersViewer.xaml",
+              "RelativeDocumentMoniker": "Quiz_GUI\\Views\\PlayersViewer.xaml",
+              "ToolTip": "D:\\quizify\\DesktopApllication\\Quiz_GUI\\Quiz_GUI\\Views\\PlayersViewer.xaml",
+              "RelativeToolTip": "Quiz_GUI\\Views\\PlayersViewer.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-01-13T15:17:27.445Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "D:\\quizify\\DesktopApllication\\Quiz_GUI\\Quiz_GUI\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "Quiz_GUI\\MainWindow.xaml",
+              "ToolTip": "D:\\quizify\\DesktopApllication\\Quiz_GUI\\Quiz_GUI\\MainWindow.xaml",
+              "RelativeToolTip": "Quiz_GUI\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-01-13T15:12:56.792Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PlayerDetails.xaml",
+              "DocumentMoniker": "D:\\quizify\\DesktopApllication\\Quiz_GUI\\Quiz_GUI\\Components\\PlayerDetails.xaml",
+              "RelativeDocumentMoniker": "Quiz_GUI\\Components\\PlayerDetails.xaml",
+              "ToolTip": "D:\\quizify\\DesktopApllication\\Quiz_GUI\\Quiz_GUI\\Components\\PlayerDetails.xaml",
+              "RelativeToolTip": "Quiz_GUI\\Components\\PlayerDetails.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-01-13T13:21:49.22Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "EditPlayerViewer.xaml.cs",
+              "DocumentMoniker": "D:\\quizify\\DesktopApllication\\Quiz_GUI\\Quiz_GUI\\Views\\EditPlayerViewer.xaml.cs",
+              "RelativeDocumentMoniker": "Quiz_GUI\\Views\\EditPlayerViewer.xaml.cs",
+              "ToolTip": "D:\\quizify\\DesktopApllication\\Quiz_GUI\\Quiz_GUI\\Views\\EditPlayerViewer.xaml.cs",
+              "RelativeToolTip": "Quiz_GUI\\Views\\EditPlayerViewer.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T13:21:40.577Z"
             }
           ]
         }

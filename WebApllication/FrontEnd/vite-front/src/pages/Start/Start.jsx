@@ -9,7 +9,7 @@ const Start = () => {
     <div>
       <img src={timer} className="animated-image1" />
     <div className="main">
-      <h1>Welcome to Quizify</h1>
+      <div className="welcome">Welcome to Quizify</div>
 
 
       <div className="button-bar">

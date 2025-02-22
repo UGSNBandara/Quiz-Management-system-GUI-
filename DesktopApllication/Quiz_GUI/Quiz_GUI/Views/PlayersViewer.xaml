@@ -21,16 +21,27 @@
 
             <TextBlock 
                 Grid.Column="0" 
-                FontSize="28"
+                FontSize="32"
+                FontWeight="Bold"
                 VerticalAlignment="Center"
-                Text="Player Viewer"/>
+                HorizontalAlignment="Center"
+                Text="         Player Dashboard"
+                Foreground="#044d0a">
+                        <TextBlock.Effect>
+                            <DropShadowEffect 
+                        Color="#0bbf1a" 
+                        ShadowDepth="2" 
+                        BlurRadius="3" 
+                        Opacity="10"/>
+                        </TextBlock.Effect>     
+            </TextBlock>
 
             <Button 
                 Grid.Column="1" 
-                FontSize="16"
-                Padding="16 6"
-                VerticalAlignment="Center"
+                Style="{StaticResource CommonButtonStyle1}"
+                Background="#0e210b"
                 Content="Add"
+                Foreground="White"
                 Command="{Binding AddPlayerCommand}"/>
         </Grid>
 

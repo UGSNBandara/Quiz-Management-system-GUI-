@@ -22,6 +22,9 @@
     <Compile Update="EditPlayerWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="ErrorWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\EditPlayerViewer.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -43,6 +46,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="EditPlayerWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ErrorWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">

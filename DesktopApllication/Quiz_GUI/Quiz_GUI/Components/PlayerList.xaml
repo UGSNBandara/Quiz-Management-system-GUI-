@@ -9,31 +9,28 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <Border BorderBrush="{StaticResource BorderPrimary}" 
-                CornerRadius="5" 
+                CornerRadius="10" 
                 BorderThickness="1">
+            <ListView BorderThickness="0" 
+                      ItemsSource="{Binding Players}" 
+                      SelectedItem="{Binding SelectedPlayer}"
+                      Background="Transparent"
+                      >
 
-            <ListView BorderThickness="0" ItemsSource="{Binding Players}" 
-          SelectedItem="{Binding SelectedPlayer}">
-                <ListView.ItemContainerStyle>
-                    <Style TargetType="ListViewItem">
-                        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
-                    </Style>
-                </ListView.ItemContainerStyle>
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <Border Padding="5 10" TextBlock.FontSize="16">
+                        <Border Padding="5,10" Background="Transparent" CornerRadius="10">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="auto"/>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
-                                <TextBlock Grid.Column="0" Text="{Binding Username}"/>
+                                <TextBlock Grid.Column="0" Text="{Binding Username}" FontSize="16" FontWeight="Bold"/>
                             </Grid>
                         </Border>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-
         </Border>
     </Grid>
 </UserControl>

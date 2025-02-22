@@ -103,3 +103,5 @@ D:\quizify\DesktopApllication\Quiz_GUI\Quiz_GUI\bin\Debug\net8.0-windows\runtime
 D:\quizify\DesktopApllication\Quiz_GUI\Quiz_GUI\bin\Debug\net8.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
 D:\quizify\DesktopApllication\Quiz_GUI\Quiz_GUI\bin\Debug\net8.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
 D:\quizify\DesktopApllication\Quiz_GUI\Quiz_GUI\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Runtime.Caching.dll
+D:\quizify\DesktopApllication\Quiz_GUI\Quiz_GUI\obj\Debug\net8.0-windows\ErrorWindow.baml
+D:\quizify\DesktopApllication\Quiz_GUI\Quiz_GUI\obj\Debug\net8.0-windows\ErrorWindow.g.cs

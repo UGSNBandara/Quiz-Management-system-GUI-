@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Quiz_GUI.Models;
+using Quiz_GUI.Stores;
+using Quiz_GUI.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +22,11 @@ namespace Quiz_GUI
     /// </summary>
     public partial class EditPlayerWindow : Window
     {
-        public EditPlayerWindow()
+        public EditPlayerWindow(Player player, PlayerDetailsViewModel playerDetails, PlayerListStore playerListStore)
         {
             InitializeComponent();
+            var viewModel = new EditPlayerViewModel(player, playerListStore, playerDetails);
+            this.DataContext = viewModel; // Set the DataContext to the ViewModel
         }
     }
 }

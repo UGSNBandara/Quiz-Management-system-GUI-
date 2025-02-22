@@ -99,5 +99,21 @@ namespace Quiz_GUI.ViewModels
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+        protected bool SetProperty<T>(ref T field, T newValue, [CallerMemberName] string propertyName = null)
+        {
+            if (!Equals(field, newValue))
+            {
+                field = newValue;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+                return true;
+            }
+
+            return false;
+        }
+
+        private Visibility errorMessage;
+
+        public Visibility ErrorMessage { get => errorMessage; set => SetProperty(ref errorMessage, value); }
     }
 }

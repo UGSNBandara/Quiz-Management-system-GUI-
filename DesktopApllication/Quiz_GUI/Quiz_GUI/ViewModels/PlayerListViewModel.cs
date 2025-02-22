@@ -1,4 +1,5 @@
-﻿using Quiz_GUI.Models;
+﻿using Quiz_GUI;
+using Quiz_GUI.Models;
 using Quiz_GUI.Stores;
 using Quiz_GUI.ViewModels;
 using System.Collections.ObjectModel;
@@ -11,6 +12,7 @@ public class PlayerListViewModel : ViewModelBase
     private readonly ObservableCollection<PlayerListItemViewModel> _players;
 
     public IEnumerable<PlayerListItemViewModel> Players => _players;
+    public string ErrorMessage { get; private set; }
 
     private PlayerListItemViewModel _selectedPlayer;
     public PlayerListItemViewModel SelectedPlayer
@@ -62,8 +64,18 @@ public class PlayerListViewModel : ViewModelBase
 
     public void AddPlayer(PlayerListItemViewModel player)
     {
-        var newPlayer = new Player(player.Username, player.Email, player.FullName, player.Rank, player.Score);
-        _playerListStore.AddPlayer(newPlayer); // Update store
+        try
+        {
+            var newPlayer = new Player(player.Username, player.Email, player.FullName, player.Rank, player.Score);
+            _playerListStore.AddPlayer(newPlayer); // Update store
+            ErrorMessage = string.Empty; // Clear any previous error messages
+        }
+        catch (InvalidOperationException ex)
+        {
+            var errorWindow = new ErrorWindow();
+            errorWindow.ErrorMessageTextBlock.Text = ex.Message; // Set the error message on the error window
+            errorWindow.ShowDialog();
+        }
     }
 
     public void RemovePlayer(PlayerListItemViewModel player)
@@ -81,6 +93,8 @@ public class PlayerListViewModel : ViewModelBase
             SelectedPlayer = null;// Update store
         }
     }
+
+
 
     protected override void Dispose()
     {

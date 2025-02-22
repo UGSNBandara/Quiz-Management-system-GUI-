@@ -10,6 +10,9 @@
         WindowStartupLocation="CenterScreen"
         FontSize="14"
         >
+    <Window.Background>
+        <ImageBrush ImageSource="D:\quizify\DesktopApllication\Quiz_GUI\Quiz_GUI\Assest\MainWindowBack1.jpg" Stretch="Fill"/>
+    </Window.Background>
 
     <Grid Margin="20">
         

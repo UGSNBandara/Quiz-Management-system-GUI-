@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Quiz_GUI"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="EditPlayerWindow" Height="450" Width="400">
+        Title="Edit Player" Height="450" Width="400">
     <Grid>
         <StackPanel Margin="20">
             <!-- Header -->
@@ -14,33 +14,35 @@
 
             <!-- Username -->
             <TextBlock Text="Username" />
-            <TextBox Text="{Binding Player.Username, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="0,5,0,10"/>
+            <TextBox Text="{Binding Player.Username, Mode=TwoWay}" Margin="0,5,0,10" />
 
             <!-- Full Name -->
             <TextBlock Text="Full Name" />
-            <TextBox Text="{Binding Player.FullName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="0,5,0,10"/>
+            <TextBox Text="{Binding Player.FullName, Mode=TwoWay}" Margin="0,5,0,10" />
 
             <!-- Email -->
             <TextBlock Text="Email" />
-            <TextBox Text="{Binding Player.Email, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="0,5,0,10"/>
+            <TextBox Text="{Binding Player.Email, Mode=TwoWay}" Margin="0,5,0,10" />
 
             <!-- Score -->
             <TextBlock Text="Score" />
-            <TextBox Text="{Binding Player.Score, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="0,5,0,10"/>
+            <TextBox Text="{Binding Player.Score, Mode=TwoWay}" Margin="0,5,0,10" />
 
             <!-- Rank -->
             <TextBlock Text="Rank" />
-            <TextBox Text="{Binding Player.Rank, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="0,5,0,20"/>
+            <TextBox Text="{Binding Player.Rank, Mode=TwoWay}" Margin="0,5,0,20" />
+
+            <!-- Error Message Display -->
+            <TextBlock Text="{Binding ErrorMessage}" Foreground="Red" Margin="0,5,0,10" />
 
             <!-- Buttons: Save and Cancel -->
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10">
                 <!-- Save Button -->
-                <Button Content="Save" Command="{Binding SaveCommand}" Margin="5,0"/>
+                <Button Content="Save" Command="{Binding SaveCommand}" Margin="5,0" Width="100"/>
 
                 <!-- Cancel Button -->
-                <Button Content="Cancel" Command="{Binding CancelCommand}" Margin="5,0"/>
+                <Button Content="Cancel" Command="{Binding CancelCommand}" Margin="5,0" Width="100"/>
             </StackPanel>
         </StackPanel>
-
     </Grid>
 </Window>

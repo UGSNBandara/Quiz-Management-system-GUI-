@@ -20,7 +20,7 @@ namespace Quiz_GUI.Stores
             LoadPlayersFromDatabase();
         }
 
-        private void LoadPlayersFromDatabase()
+        public void LoadPlayersFromDatabase()
         {
             Players.Clear();
 
@@ -50,8 +50,36 @@ namespace Quiz_GUI.Stores
             PlayerListChanged?.Invoke(); // Notify listeners after loading data
         }
 
+        public void UpdatePlayer(Player player)
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+                string query = "UPDATE Players SET Email = @Email, FullName = @FullName, Rank = @Rank, Score = @Score WHERE Username = @Username";
+
+                using (var command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Username", player.Username);
+                    command.Parameters.AddWithValue("@Email", player.Email);
+                    command.Parameters.AddWithValue("@FullName", player.FullName);
+                    command.Parameters.AddWithValue("@Rank", player.Rank);
+                    command.Parameters.AddWithValue("@Score", player.Score);
+
+                    command.ExecuteNonQuery();
+                }
+            }
+            LoadPlayersFromDatabase();
+            PlayerListChanged?.Invoke();
+
+        }
+
         public void AddPlayer(Player player)
         {
+            if (UsernameExists(player.Username))
+            {
+                // You can throw an exception or trigger an error message here.
+                throw new InvalidOperationException("Username already exists. Please choose a different one.");
+            }
             using (var connection = new SqlConnection(_connectionString))
             {
                 connection.Open();
@@ -84,8 +112,23 @@ namespace Quiz_GUI.Stores
                 }
             }
 
-            Players.Remove(player); // Remove player from local collection
+            Players.Remove(player);
+            LoadPlayersFromDatabase();
             PlayerListChanged?.Invoke(); // Notify listeners after removing player
+        }
+
+        public bool UsernameExists(string username)
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+                string query = "SELECT COUNT(1) FROM Players WHERE Username = @Username";
+                using (var command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Username", username);
+                    return Convert.ToInt32(command.ExecuteScalar()) > 0;
+                }
+            }
         }
     }
 }

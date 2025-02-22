@@ -24,11 +24,16 @@
                             </Style.Triggers>
                         </Style>
                     </Grid.Style>
-                <TextBlock 
-                    FontSize="20"
-                    TextWrapping="WrapWithOverflow"
-                    Text="Please select a Youtube viewer to see thier details"/>
-            </Grid>
+                    <TextBlock 
+                        FontSize="20"
+                        Foreground="#044d0a"
+                        FontWeight="DemiBold"
+                        TextWrapping="WrapWithOverflow"
+                        Text="Please Select A Player to See Their Details&#xA;&#xA;&#xA;&#xA;Developer : Sulitha Nulaksha&#xA;Computer Engineer Undergraduate"
+                        TextAlignment="Center"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"/>
+                </Grid>
 
                 <Grid Grid.IsSharedSizeScope="True">
                     <Grid.Style>
@@ -50,96 +55,109 @@
                         <RowDefinition Height="auto"/>
                     </Grid.RowDefinitions>
 
-                    <TextBlock 
-                    Grid.Row="0"
-                    FontSize="16"
-                    Padding="20 10 0 10"
-                    FontWeight="Bold"
-                    Text="{Binding UserName}"/>
+                    <Border 
+                        Background="LightGray" 
+                        CornerRadius="10" 
+                        Padding="10" 
+                        Margin="20 20 20 10">
+                        <StackPanel>
+                            <TextBlock 
+                                Grid.Row="0"
+                                FontSize="16"
+                                Padding="20 10 0 10"
+                                FontWeight="Bold"
+                                Text="{Binding UserName}"/>
 
-                    <Grid Grid.Row="1">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="auto" SharedSizeGroup="Label"/>
-                            <ColumnDefinition Width="auto"/>
-                        </Grid.ColumnDefinitions>
+                            <Grid Grid.Row="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto" SharedSizeGroup="Label"/>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock
+                                    Grid.Column="0"
+                                    FontWeight="Bold"
+                                    Padding="20 8 0 8"
+                                    Text="Total marks"/>
+                                <TextBlock
+                                    Grid.Column="1"
+                                    FontWeight="Bold"    
+                                    Padding="20 8 0 8"
+                                    Text="{Binding Score}"/>
+                            </Grid>
 
-                        <TextBlock
-                        Grid.Column="0"
-                        FontWeight="Bold"
-                        Padding="20 8 0 8"
-                        Text="Total marks"/>
-                        <TextBlock
-                        Grid.Column="1"
-                        Padding="20 8 0 8"
-                        Text="{Binding Score}"/>
-                    </Grid>
+                            <Grid Grid.Row="2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto" SharedSizeGroup="Label"/>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock
+                                    Grid.Column="0"
+                                    FontWeight="Bold"
+                                    Padding="20 10 0 8"
+                                    Text="Rank"/>
+                                <TextBlock
+                                    Grid.Column="1"
+                                    FontWeight="Bold"
+                                    Padding="20 10 0 8"
+                                    Text="{Binding Rank}"/>
+                            </Grid>
 
-                    <Grid Grid.Row="2">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="auto" SharedSizeGroup="Label"/>
-                            <ColumnDefinition Width="auto"/>
-                        </Grid.ColumnDefinitions>
+                            <Grid Grid.Row="3">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto" SharedSizeGroup="Label"/>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock
+                                    Grid.Column="0"
+                                    FontWeight="Bold"
+                                    Padding="20 10 0 8"
+                                    Text="Email"/>
+                                <TextBlock
+                                    Grid.Column="1"
+                                    FontWeight="Bold"
+                                    Padding="20 10 0 8"
+                                    Text="{Binding Email}"/>
+                            </Grid>
 
-                        <TextBlock
-                        Grid.Column="0"
-                        FontWeight="Bold"
-                        Padding="20 10 0 8"
-                        Text="Rank"/>
-                        <TextBlock
-                        Grid.Column="1"
-                        Padding="20 10 0 8"
-                        Text="{Binding Rank}"/>
-                    </Grid>
-
-                    <Grid Grid.Row="3">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="auto" SharedSizeGroup="Label"/>
-                            <ColumnDefinition Width="auto"/>
-                        </Grid.ColumnDefinitions>
-
-                        <TextBlock
-                        Grid.Column="0"
-                        FontWeight="Bold"
-                        Padding="20 10 0 8"
-                        Text="Email"/>
-                        <TextBlock
-                        Grid.Column="1"
-                        Padding="20 10 0 8"
-                        Text="{Binding Email}"/>
-                    </Grid>
-
-                    <Grid Grid.Row="4">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="auto" SharedSizeGroup="Label"/>
-                            <ColumnDefinition Width="auto"/>
-                        </Grid.ColumnDefinitions>
-
-                        <TextBlock
-                        Grid.Column="0"
-                        FontWeight="Bold"
-                        Padding="20 10 0 8"
-                        Text="Full Name"/>
-                        <TextBlock
-                        Grid.Column="1"
-                        Padding="20 10 0 8"
-                        Text="{Binding FullName}"/>
-                    </Grid>
+                            <Grid Grid.Row="4">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto" SharedSizeGroup="Label"/>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock
+                                    Grid.Column="0"
+                                    FontWeight="Bold"
+                                    Padding="20 10 0 8"
+                                    Text="Full Name"/>
+                                <TextBlock
+                                    Grid.Column="1"
+                                    FontWeight="Bold"
+                                    Padding="20 10 0 8"
+                                    Text="{Binding FullName}"/>
+                            </Grid>
+                        </StackPanel>
+                    </Border>
 
                     <Grid Grid.Row="5">
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
                             <Button
                                 Content="Edit Player" 
                                 Command="{Binding EditCommand}" 
+                                Style="{StaticResource CommonButtonStyle1}"
+                                Background="#1e3bf7"
+                                Foreground="White"
                                 Margin="10" />
-                                                <Button
+                            <Button
                                 Content="Delete" 
+                                Style="{StaticResource CommonButtonStyle1}"
                                 Command="{Binding DeleteCommand}" 
+                                Background="#f73e1e"
+                                Foreground="White"
                                 Margin="10" />
                         </StackPanel>
-
                     </Grid>
                 </Grid>
             </Grid>
-        </Border>  
+        </Border>
     </Grid>
 </UserControl>

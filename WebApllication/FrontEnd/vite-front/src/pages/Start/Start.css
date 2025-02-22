@@ -1,6 +1,8 @@
 body {
-  background-color: black;
+  background-image: url("../../assets/background_1.jpg");
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   margin: 0;
   height: 100vh;
   display: flex;
@@ -8,21 +10,23 @@ body {
   align-items: center;
 }
 
-h1{
-    color: aliceblue;
-    font-size: 50px;
+.welcome{
+    color: rgb(255, 255, 255);
+    font-size: 75px;
+    font-weight: bold;
+    margin: 15px;
 }
 
 p{
-    color: aliceblue;
-    font-size: 15px;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
 }
 
 /* Main container for centering the content */
 .main {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: end;
     align-items: center;
     height: 100vh;
     text-align: center;
@@ -34,7 +38,9 @@ p{
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 50px; 
+    gap: 50px;
+    margin-top: 20px;
+    margin-bottom: 27vh; 
   }
 
   .button-bar button {
@@ -42,8 +48,8 @@ p{
     margin: 10px;
     border: none;
     background-color: #8354c8;
-    color: white;
-    font-size: 25px;
+    color: rgb(255, 255, 255);
+    font-size: 30px;
     cursor: pointer;
     border-radius: 5px;
     transition: background-color 0.3s ease;
@@ -78,5 +84,19 @@ p{
     }
     100% {
       transform: translateX(-50%) rotate(0deg); /* Return to original position */
+    }
+  }
+
+  @media  (max-width: 500px) {
+    .animated-image1{
+      width: 100px;
+    }
+
+    .welcome{
+      font-size: 45px;
+    }
+
+    .button-bar button{
+      font-size: 20px;
     }
   }
