@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import React from "react";
 import { useEffect, useState } from 'react';
+import './Signin.css';
 
 
 const Signin = () => {
@@ -37,6 +38,25 @@ const Signin = () => {
   };
 
   const addUser = async () => {
+    if(username == ""){
+      setMessage("Error: Username cannot be Empty")
+      return;
+    }
+
+    if(!email.trim()){
+      setMessage("Error: Email cannot be Empty")
+      return;
+    }
+
+    if(!name.trim()){
+      setMessage("Error: Name cannot be Empty")
+      return;
+    }
+
+    if(!password.trim()){
+      setMessage("Error: Password cannot be Empty")
+      return;
+    }
 
     if (isUserEmailExists()) {
       setMessage("Error: Email already exists!");
@@ -83,29 +103,19 @@ const Signin = () => {
 
 
   return (
-    <div>
-      <h1>Welcome to My Vite + React App</h1>
+    <div className="main-container">
+      <h1 className="heading">SignIn Quizify</h1>
 
-      <br />
-      <br />
-      <Link to="/home">
-        <button style={{ padding: '10px 20px', margin: '10px' }}>Go to Home</button>
-      </Link>
-      <Link to="/">
-        <button style={{ padding: '10px 20px', margin: '10px' }}>Go to Start</button>
-      </Link>
-
-      <br />
-      <hr />
-
+      <dir className="container">
       <input id="box1" type="text" placeholder='Username' onChange={(e) => setUsername(e.target.value)} />
       <input id="box2" type="text" placeholder='Email' onChange={(e) => setEmail(e.target.value)} />
       <input id="box3" type="text" placeholder='Name' onChange={(e) => setName(e.target.value)} />
       <input id="box4" type="text" placeholder='password' onChange={(e) => setPassword(e.target.value)} />
-      <button onClick={addUser}>Sign IN</button>
+      <button onClick={addUser} className="signinbutton">Sign IN</button>
 
       <br /><hr />
-      {message && <p>{message}</p>}
+      {message && <p className="error-massage">{message}</p>}
+      </dir>
     </div>
   );
 };

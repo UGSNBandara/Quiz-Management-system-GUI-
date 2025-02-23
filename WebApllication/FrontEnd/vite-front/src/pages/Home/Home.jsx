@@ -2,6 +2,7 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useContext, useEffect, useState } from 'react';
 import { UserContext } from "../../context/UserContext";
+import "./Home.css"
 
 
 const Home = () => {
@@ -33,34 +34,49 @@ const Home = () => {
 
 
   return (
-    <div>
-      <h1>Welcome {loggedInUser?.username}  to My Vite + React App</h1>
-      <p>This is the home page of a simple React application.</p>
-      <Link to="/profile">
-        <button style={{ padding: '10px 20px', margin: '10px' }}>Go to Profile</button>
-      </Link>
-      <Link to="/">
-        <button style={{ padding: '10px 20px', margin: '10px' }}>Go to Start</button>
-      </Link>
+    <div className="body1">
+      <div className="nav-bar">
+        <div className="text-navbar">
+          Hello {loggedInUser.username}
+        </div>
 
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "10px" }}>
-        {quizzes.map((quiz) => (
-          <div
-            key={quiz.id}
-            style={{
-              border: "1px solid #ccc",
-              borderRadius: "8px",
-              padding: "10px",
-              textAlign: "center",
-            }}
-          >
-            <h3>{quiz.name}</h3>
-            <p>{quiz.total_marks}</p>
-            <button onClick={() => navigateToQuiz(quiz.id)}>
-              Start Quiz
-            </button>
-          </div>
-        ))}
+        <div className="buttons">
+          <Link to="/profile">
+            <button style={{ padding: '10px 20px', margin: '10px' }}>Profile</button>
+          </Link>
+          <Link to="/">
+            <button style={{ padding: '10px 20px', margin: '10px' }}>LeadBoard</button>
+          </Link>
+          <Link to="/">
+            <button style={{ padding: '10px 20px', margin: '10px' }}>Logout</button>
+          </Link>
+        </div>
+      </div>
+
+
+      <div className="body2">
+        <div className="addsection1">
+          Eat Like You Mean it!!
+        </div>
+        <div className="quiz-grid">
+          {quizzes.map((quiz) => (
+            <div
+              className="quiz-box"
+              key={quiz.id}
+            >
+              <div className="quiz-image">
+              </div>
+              <h3>{quiz.name}</h3>
+              <p>Total Marks : {quiz.total_marks}</p>
+              <button onClick={() => navigateToQuiz(quiz.id)}>
+                Start Quiz
+              </button>
+            </div>
+          ))}
+        </div>
+        <div className="addsection2">
+          Eat Like You Mean it!!
+        </div>
       </div>
     </div>
   );

@@ -12,7 +12,6 @@ const Login = () => {
   const [message, setMessage] = useState("");
   const { setLoggedInUser } = useContext(UserContext);
 
-
     useEffect(() => {
       fetchUsers();
     }, []);
@@ -41,24 +40,24 @@ const Login = () => {
       }
       else{
         setMessage("Username or Password incorrect");
+
       }
     }
 
   return (
-    <div>
-      <h1>Login</h1>
+    <div className="main-container">
+      <h1 className="heading">Login Quizify</h1>
 
+      <div className="container">
       <input id="box1" type="text" placeholder='Username' onChange={(e) => setUsername(e.target.value)} />
       <input id="box2" type="text" placeholder='password' onChange={(e) => setPassword(e.target.value)} />
 
-      <button onClick={handleLogin}>
+      <button className="loginbutton" onClick={handleLogin}>
         Login
       </button>
-      <Link to="/">
-        <button style={{ padding: '10px 20px', margin: '10px' }}>Go to Start</button>
-      </Link>
-      <hr />
-      {message && <p>{message}</p>}
+      {message && <p className="error-massage" >{message}</p>}
+
+      </div>
     </div>
   );
 };

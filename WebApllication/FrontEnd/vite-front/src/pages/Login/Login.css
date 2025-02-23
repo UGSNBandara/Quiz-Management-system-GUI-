@@ -6,9 +6,73 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.heading {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.main-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    width: 350px;
+    max-width: 500px;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#box1,
+#box2 {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 4px; /* Rounded corners */
+  font-size: 16px;
+}
+
+.loginbutton{
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff; /* Blue button */
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
   }
   
-  h1{
-      color: aliceblue;
-      font-size: 50px;
+.loginbutton:hover {
+    background-color: #0056b3;
   }
+
+.error-massage{
+    font-size: 20px;
+    color: red;
+}
+
+@media (max-width: 500px){
+    .container{
+        padding: 20px;
+        width: 300px;
+    }
+}
+
+@media (max-width: 350px){
+    .container{
+        width: 250px;
+    }
+}
