@@ -44,7 +44,7 @@ const Home = () => {
           <Link to="/profile">
             <button style={{ padding: '10px 20px', margin: '10px' }}>Profile</button>
           </Link>
-          <Link to="/">
+          <Link to="/leadboard">
             <button style={{ padding: '10px 20px', margin: '10px' }}>LeadBoard</button>
           </Link>
           <Link to="/">

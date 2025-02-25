@@ -1,0 +1,157 @@
+.body1 {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 50px;
+}
+
+.nav-bar {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    gap: 250px;
+    justify-content: center;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.text-navbar {
+    font-size: 20px;
+    color: #0056b3;
+    font-weight: bold;
+}
+
+.nav-bar button {
+    font-size: 18px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.nav-bar button:hover {
+    background-color: #0056b3;
+}
+
+
+.leadboardbody {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+}
+
+.leadboard{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    overflow:auto;
+}
+
+.leadboardBox {
+    background-color: #ffffff; /* Default background color */
+    padding: 10px 100px;
+    border-radius: 15px;
+    height: 30px;
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth color transition */
+}
+
+.leadboardBox:hover {
+    background-color:#aecff2; /* Change the background color on hover */
+}
+
+.leadboardBox.active {
+    background-color: #aecff2;
+}
+
+
+.leadboardBox p{
+    color: #0056b3;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.leadboardBox-head {
+    background-color:#007bff;
+    padding: 10px 100px;
+    border-radius: 15px;
+    height: 30px;
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.leadboardBox-head p{
+    color:#ffffff ;
+    font-weight: bold;
+    font-size: 20px;
+    
+}
+
+.relevent-profile{
+    width: 400px;
+    height: 260px;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    padding: 5px;
+    text-align: center;
+}
+
+.userdetails{
+display: flex;
+flex-direction: column;
+align-items: first baseline;
+padding-left: 20px;
+padding-top: 10px;
+}
+
+.onelinedetail{
+display: flex;
+flex-direction: row;
+gap: 15px;
+padding: 10px;
+}
+
+#selectedtopic{
+    padding-left: 100px;
+}
+
+.text1,
+.text2,
+.text3{
+height: 18px;
+background-color: #ffffff;
+border: 1px solid #ffffff;
+border-radius: 8px;
+padding: 10px;
+text-align:left;
+font-size: 20px;
+color: #0056b3;
+font-weight: bold;
+}
+
+.text2{
+width: 200px;
+}
+
+.text1{
+width: 90px;
+}
+
+.text3{
+    width: 150px;
+    text-align: center;
+}

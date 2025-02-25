@@ -1,0 +1,143 @@
+.body1 {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.body2-profile {
+    height: 700px;
+    width: 100%;
+    margin: 20px;
+    padding: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.profile-container{
+        width: 400px;
+        height: 500px;
+        border: 1px solid #ffffff;
+        border-radius: 8px;
+        padding: 10px;
+        text-align: center;
+}
+
+.userdetails{
+    display: flex;
+    flex-direction: column;
+    align-items: first baseline;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+.onelinedetail{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    padding: 10px;
+}
+
+.text1{
+    width: 90px;
+    height: 18px;
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    padding: 10px;
+    text-align:left;
+    font-size: 18px;
+}
+
+.text2{
+    width: 200px;
+    height: 18px;
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    padding: 10px;
+    text-align:left;
+    font-size: 18px;
+}
+
+.buttonprofile{
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items:end;
+    padding-right: 24px;
+}
+
+.buttonprofile button{
+    width: 105px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.update-container{
+    width: 400px;
+    height: 500px;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.updatebutton{
+    padding-top: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 118px;
+}
+
+.updatebutton button{
+    width: 105px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.boxes{
+
+    padding-top: 20px;
+}
+
+.updatetext{
+    font-size: 20px;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.warningtextupdate{
+    font-size: 20px;
+    color: #ffffff;
+    font-weight: 200;
+    padding: 5px;
+}
+
+#box5,
+#box6,
+#box7,
+#box8 {
+  width: 300px;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
