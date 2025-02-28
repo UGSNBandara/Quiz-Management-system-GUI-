@@ -7,6 +7,7 @@ import Login from './pages/Login/Login.jsx'
 import Signin from './pages/Signin/Signin.jsx'
 import Quiz from './pages/Quiz/Quiz.jsx'
 import Leadboard from './pages/Leadboard/Leadboard.jsx'
+import Addquiz from './pages/AddQuiz/Addquiz.jsx'
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
             <Route path='/signin' element={<Signin/>}/>
             <Route path='/quiz' element={<Quiz/>}/>
             <Route path='/leadboard' element={<Leadboard/>}/>
+            <Route path='/addquiz' element={<Addquiz/>}/>
             
           </Routes>
       </div>

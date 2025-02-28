@@ -25,9 +25,9 @@ const Home = () => {
     }
   }
 
-  const navigateToQuiz = (quizId) => {
+  const navigateToQuiz = (quizId, quizMarks) => {
     localStorage.setItem("selectedQuizId", quizId);
-
+    localStorage.setItem("selectedQuizMarks", quizMarks);
     navigate('/quiz');
   };
 
@@ -68,7 +68,7 @@ const Home = () => {
               </div>
               <h3>{quiz.name}</h3>
               <p>Total Marks : {quiz.total_marks}</p>
-              <button onClick={() => navigateToQuiz(quiz.id)}>
+              <button onClick={() => navigateToQuiz(quiz.id, quiz.total_marks)}>
                 Start Quiz
               </button>
             </div>

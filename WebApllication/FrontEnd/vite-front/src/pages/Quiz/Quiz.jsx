@@ -1,26 +1,31 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../context/UserContext";
+import "./Quiz.css";
 
 const Quiz = () => {
   const [questions, setQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [score, setScore] = useState(0);
   const [userAnswer, setUserAnswer] = useState(null);
   const [isQuizComplete, setIsQuizComplete] = useState(false);
   const navigate = useNavigate();
   const { loggedInUser, setLoggedInUser } = useContext(UserContext);
+  const [score, setScore] = useState(0);
+  const [marks] = useState(Number(localStorage.getItem("selectedQuizMarks")));
+  const [qmarks, setqmarks] = useState(0);
+  const [buttonText, setbuttonText] = useState("Next");
 
   useEffect(() => {
     const quizId = localStorage.getItem("selectedQuizId");
 
     if (!quizId) {
       alert("No Quiz Selected");
-      navigate("/");
+      navigate("/home");
       return;
     }
     fetchQuestions(quizId);
   }, []);
+
 
   const fetchQuestions = async (quizId) => {
     try {
@@ -32,17 +37,19 @@ const Quiz = () => {
     }
   };
 
+
+
   const updateUserMarks = async (userId) => {
     const userData = {
       username: loggedInUser.username,
       full_name: loggedInUser.full_name,
       password: loggedInUser.password,
       email: loggedInUser.email,
-      marks: score,  // Use score to update marks
+      marks: score + Number(loggedInUser.marks),
     };
 
     try {
-      const response = await fetch(`http://127.0.0.1:8000/api/users/${userId}/`, {
+      const response = await fetch(`http://127.0.0.1:8000/api/users/${userId}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -60,13 +67,18 @@ const Quiz = () => {
   const handleNextQuestion = () => {
     if (userAnswer) {
       if (userAnswer === questions[currentQuestionIndex].correct_answer) {
-        setScore(score + 1);
+        setScore(score + qmarks);
+        console.log(score);
       }
 
       if (currentQuestionIndex + 1 < questions.length) {
+        if(currentQuestionIndex == questions.length-2){
+          setbuttonText("Finish Attempt");
+        }
         setCurrentQuestionIndex(currentQuestionIndex + 1);
         setUserAnswer(null);
-      } else {
+      } 
+      else {
         setIsQuizComplete(true);
       }
     } else {
@@ -75,17 +87,24 @@ const Quiz = () => {
   };
 
   useEffect(() => {
+    const qunmber = questions.length;
+    setqmarks(marks/qunmber);
+    console.log(qunmber);
+    console.log(qmarks);
+  }, [questions]);
+
+  useEffect(() => {
     if (isQuizComplete) {
-      setLoggedInUser({ ...loggedInUser, marks: score }); // Set the new score in the context
-      updateUserMarks(loggedInUser.id); // Update the marks in the database
+      setLoggedInUser({ ...loggedInUser, marks: score + Number(loggedInUser.marks)});
+      updateUserMarks(loggedInUser.id);
     }
-  }, [isQuizComplete]); // Run when isQuizComplete changes
+  }, [isQuizComplete]);
 
   if (isQuizComplete) {
     return (
-      <div style={{ textAlign: "center" }}>
+      <div className="complete-box">
         <h1>Quiz Completed</h1>
-        <p>Your Total Marks: {score} / {questions.length}</p>
+        <p>Your Total Marks: {(score)} / {marks}</p>
         <button onClick={() => navigate("/home")}>Back to Home</button>
       </div>
     );
@@ -94,14 +113,17 @@ const Quiz = () => {
   const currentQuestion = questions[currentQuestionIndex];
 
   return (
-    <div style={{ padding: "20px", textAlign: "center" }}>
-      <h2>Quiz</h2>
+    <div className="q-container">
+      <div className="q-container2">
+        <p>Quiz marks : {marks}</p>
+        <p>Quetion count : {questions.length}</p>
+      </div>
       {questions.length > 0 ? (
-        <div>
-          <h3>{currentQuestion.question_text}</h3>
-          <div>
+        <div className="q-box-quiz">
+          <h3 className="q-quiz-text">{currentQuestion.question_text}</h3>
+          <div className="q-quiz-answers">
             {["A", "B", "C", "D"].map((option) => (
-              <div key={option} style={{ margin: "10px" }}>
+              <div key={option} style={{ margin: "10px" }} className="q-quiz-answer2">
                 <label>
                   <input
                     type="radio"
@@ -115,11 +137,13 @@ const Quiz = () => {
               </div>
             ))}
           </div>
-          <button onClick={handleNextQuestion}>Next</button>
         </div>
+
+        
       ) : (
         <p>Loading Questions...</p>
       )}
+      <button className="nextquiz-button" onClick={handleNextQuestion}>{buttonText}</button>
     </div>
   );
 };

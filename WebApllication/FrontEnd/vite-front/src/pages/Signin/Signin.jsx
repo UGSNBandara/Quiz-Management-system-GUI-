@@ -1,17 +1,19 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import React from "react";
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import './Signin.css';
+import { UserContext } from "../../context/UserContext";
 
 
 const Signin = () => {
+  const navigate = useNavigate();
   const [users , setUsers] = useState([])
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [message, setMessage] = useState(""); 
-
+  const {setLoggedInUser} = useContext(UserContext);
 
   useEffect(() => {
     fetchUsers();
@@ -76,6 +78,8 @@ const Signin = () => {
       marks: 0,
     };
 
+
+
     try {
       const response = await fetch("http://127.0.0.1:8000/api/addusers/", {
         method: "POST",
@@ -88,10 +92,13 @@ const Signin = () => {
       const data = await response.json();
       console.log(data);
       setMessage("Successfully registered");
+      setLoggedInUser(data);
       document.getElementById("box1").value = "";
       document.getElementById("box2").value = "";
       document.getElementById("box3").value = "";
       document.getElementById("box4").value = "";
+      navigate('/home');
+
     }
 
     catch (err) {
