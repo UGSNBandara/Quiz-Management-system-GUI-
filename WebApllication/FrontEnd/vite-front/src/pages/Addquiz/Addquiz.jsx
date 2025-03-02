@@ -33,10 +33,12 @@ const Addquiz = () => {
     const addQuizToDB = async () => {
         if(!title.trim()){
             setMessage("Title Cannot Be Empty");
+            return;
         }
 
         if(!marks.trim()){
             setMessage("Marks Cannot Be Empty");
+            return;
         }
 
         const quizData = {
@@ -67,6 +69,7 @@ const Addquiz = () => {
     }
 
     const addquiz = (inb) => {
+        setMessage("");
         setIsAddQuiz(true);
     } 
 
