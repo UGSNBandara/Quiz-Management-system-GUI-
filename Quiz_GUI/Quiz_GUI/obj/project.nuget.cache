@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "VCjEieVFkLQ=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\sulit\\source\\repos\\Quiz_GUI\\Quiz_GUI\\Quiz_GUI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\sulit\\.nuget\\packages\\dropdownmenu.wpf\\1.0.0\\dropdownmenu.wpf.1.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
