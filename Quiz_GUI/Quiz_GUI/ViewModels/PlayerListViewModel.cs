@@ -4,74 +4,64 @@ using Quiz_GUI.Stores;
 using Quiz_GUI.ViewModels;
 using System.Collections.ObjectModel;
 
-public class PlayerListViewModel : ViewModelBase
+namespace Quiz_GUI.ViewModels
 {
-    private readonly SelectedPlayerStores _selectedPlayerStores;
-    private readonly ObservableCollection<PlayerListItemViewModel> _players;
-    public IEnumerable<PlayerListItemViewModel> Players => _players;
-
-    private PlayerListItemViewModel _selectedPlayer;
-    public PlayerListItemViewModel SelectedPlayer
+    public class PlayerListViewModel : ViewModelBase
     {
-        get => _selectedPlayer;
-        set
-        {
-            _selectedPlayer = value;
-            OnPropertyChanged(nameof(SelectedPlayer));
+        private readonly SelectedPlayerStores _selectedPlayerStores;
+        private readonly ObservableCollection<PlayerListItemViewModel> _players;
+        public IEnumerable<PlayerListItemViewModel> Players => _players;
 
-            if (_selectedPlayer != null)
+        private PlayerListItemViewModel _selectedPlayer;
+        public PlayerListItemViewModel SelectedPlayer
+        {
+            get => _selectedPlayer;
+            set
             {
-                _selectedPlayerStores.selectedPlayer = new Player(
-                    _selectedPlayer.Username,
-                    _selectedPlayer.Email, 
-                    _selectedPlayer.FullName,          
-                    _selectedPlayer.Rank,                    
-                    _selectedPlayer.Score                   
-                );
+                _selectedPlayer = value;
+                OnPropertyChanged(nameof(SelectedPlayer));
+
+                if (_selectedPlayer != null)
+                {
+                    _selectedPlayerStores.selectedPlayer = new Player(
+                        _selectedPlayer.Username,
+                        _selectedPlayer.Email,
+                        _selectedPlayer.FullName,
+                        _selectedPlayer.Rank,
+                        _selectedPlayer.Score
+                    );
+                }
             }
         }
-    }
 
-    public PlayerListViewModel(SelectedPlayerStores selectedPlayerStores)
-    {
-        _selectedPlayerStores = selectedPlayerStores;
-        PlayerDataManager playerdbManager = new PlayerDataManager();
-        _players = new ObservableCollection<PlayerListItemViewModel>(playerdbManager.GetAllPlayersFromDatabase());
-    }
-
-    public void AddPlayer(PlayerListItemViewModel newPlayer)
-    {
-        _players.Add(newPlayer);
-        OnPropertyChanged(nameof(Players));
-    }
-
-    public void DeletePlayer(PlayerListItemViewModel playerToDelete)
-    {
-        if (_players.Contains(playerToDelete))
+        public PlayerListViewModel(SelectedPlayerStores selectedPlayerStores)
         {
+            _selectedPlayerStores = selectedPlayerStores;
             PlayerDataManager playerdbManager = new PlayerDataManager();
-            playerdbManager.DeletePlayerFromDatabase(playerToDelete.Username);
+            _players = new ObservableCollection<PlayerListItemViewModel>(playerdbManager.GetAllPlayersFromDatabase());
+        }
 
-            _players.Remove(playerToDelete);
+        public void AddPlayer(PlayerListItemViewModel newPlayer)
+        {
+            _players.Add(newPlayer);
             OnPropertyChanged(nameof(Players));
         }
-    }
 
-
-    public void RemovePlayer(PlayerListItemViewModel player)
-    {
-        if (player != null)
+        public void RemovePlayer(PlayerListItemViewModel playerToRemove)
         {
-            _players.Remove(player);
-            OnPropertyChanged(nameof(Players));
-
-            // Clear the selected player from the store if it matches the removed player
-            if (_selectedPlayerStores.selectedPlayer != null &&
-                _selectedPlayerStores.selectedPlayer.Username == player.Username)
+            if (_players.Contains(playerToRemove))
             {
-                _selectedPlayerStores.selectedPlayer = null;
+                _players.Remove(playerToRemove);
+                OnPropertyChanged(nameof(Players));
+
+                if (_selectedPlayerStores.selectedPlayer != null &&
+                    _selectedPlayerStores.selectedPlayer.Username == playerToRemove.Username)
+                {
+                    _selectedPlayerStores.selectedPlayer = null;
+
+                    OnPropertyChanged(nameof(SelectedPlayer));
+                }
             }
         }
     }
-
 }

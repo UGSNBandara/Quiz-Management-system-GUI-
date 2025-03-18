@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace Quiz_GUI.ViewModels
@@ -23,9 +24,10 @@ namespace Quiz_GUI.ViewModels
         public PlayerViewModel(SelectedPlayerStores _SelectedPlayerStores)
         {
             PlayerListViewModel = new PlayerListViewModel(_SelectedPlayerStores);
-            PlayerDetailsViewModel = new PlayerDetailsViewModel(_SelectedPlayerStores);
+            PlayerDetailsViewModel = new PlayerDetailsViewModel(_SelectedPlayerStores, PlayerListViewModel);
 
             AddPlayerCommand = new RelayCommand(ExecuteAddPlayerCommand);
+            
         }
 
         private void ExecuteAddPlayerCommand(object parameter)
@@ -53,6 +55,8 @@ namespace Quiz_GUI.ViewModels
                 PlayerListViewModel.AddPlayer(newPlayer);
             }
         }
+
+
 
 
 

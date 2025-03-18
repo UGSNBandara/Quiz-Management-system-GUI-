@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Quiz_GUI.Components"
+             xmlns:local="clr-namespace:Quiz_GUI.Components" xmlns:viewmodels="clr-namespace:Quiz_GUI.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:PlayerDetailsViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
@@ -108,28 +108,30 @@
                     </Grid.ColumnDefinitions>
 
                     <!-- Delete Button -->
-                    <Button Grid.Column="4"
-            Content="Delete"
-            Background="#FF3B30"
-            Foreground="White"
-            FontWeight="Bold"
-            Padding="10 5"
-            Margin="10,5,0,5"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"
-            Command="{Binding DeletePlayerCommand}"/>
+                    <Button 
+                        Grid.Column="4"
+                        Content="Delete"
+                        Background="#FF3B30"
+                        Foreground="White"
+                        FontWeight="Bold"
+                        Padding="10 5"
+                        Margin="10,5,0,5"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Command="{Binding DeletePlayerCommand}"/>
+
 
                     <!-- Change Button -->
-           <Button Grid.Column="5"
-            Content="Change"
-            Background="#007AFF"
-            Foreground="White"
-            FontWeight="Bold"
-            Padding="10 5"
-            Margin="10,5,0,5"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"
-            Command="{Binding ChangePlayerCommand}"/>
+                   <Button Grid.Column="5"
+                        Content="Change"
+                        Background="#007AFF"
+                        Foreground="White"
+                        FontWeight="Bold"
+                        Padding="10 5"
+                        Margin="10,5,0,5"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Command="{Binding ChangePlayerCommand}"/>
                 </Grid>
 
             </Grid>

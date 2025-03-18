@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "D:\\quizify\\Quiz_GUI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{08E5B93C-5BBD-4671-A9B9-509C6869D3E7}|Quiz_GUI\\Quiz_GUI.csproj|d:\\quizify\\quiz_gui\\quiz_gui\\viewmodels\\playerlistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{08E5B93C-5BBD-4671-A9B9-509C6869D3E7}|Quiz_GUI\\Quiz_GUI.csproj|solutionrelative:quiz_gui\\viewmodels\\playerlistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{08E5B93C-5BBD-4671-A9B9-509C6869D3E7}|Quiz_GUI\\Quiz_GUI.csproj|d:\\quizify\\quiz_gui\\quiz_gui\\viewmodels\\playerdetailsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{08E5B93C-5BBD-4671-A9B9-509C6869D3E7}|Quiz_GUI\\Quiz_GUI.csproj|solutionrelative:quiz_gui\\viewmodels\\playerdetailsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{08E5B93C-5BBD-4671-A9B9-509C6869D3E7}|Quiz_GUI\\Quiz_GUI.csproj|d:\\quizify\\quiz_gui\\quiz_gui\\viewmodels\\playerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{08E5B93C-5BBD-4671-A9B9-509C6869D3E7}|Quiz_GUI\\Quiz_GUI.csproj|solutionrelative:quiz_gui\\viewmodels\\playerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{08E5B93C-5BBD-4671-A9B9-509C6869D3E7}|Quiz_GUI\\Quiz_GUI.csproj|d:\\quizify\\quiz_gui\\quiz_gui\\db_manager\\playerdatamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{08E5B93C-5BBD-4671-A9B9-509C6869D3E7}|Quiz_GUI\\Quiz_GUI.csproj|solutionrelative:quiz_gui\\db_manager\\playerdatamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{08E5B93C-5BBD-4671-A9B9-509C6869D3E7}|Quiz_GUI\\Quiz_GUI.csproj|d:\\quizify\\quiz_gui\\quiz_gui\\viewmodels\\playerlistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{08E5B93C-5BBD-4671-A9B9-509C6869D3E7}|Quiz_GUI\\Quiz_GUI.csproj|solutionrelative:quiz_gui\\viewmodels\\playerlistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{08E5B93C-5BBD-4671-A9B9-509C6869D3E7}|Quiz_GUI\\Quiz_GUI.csproj|d:\\quizify\\quiz_gui\\quiz_gui\\db_manager\\admindatamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{08E5B93C-5BBD-4671-A9B9-509C6869D3E7}|Quiz_GUI\\Quiz_GUI.csproj|solutionrelative:quiz_gui\\db_manager\\admindatamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{08E5B93C-5BBD-4671-A9B9-509C6869D3E7}|Quiz_GUI\\Quiz_GUI.csproj|d:\\quizify\\quiz_gui\\quiz_gui\\db_manager\\playerdatamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{08E5B93C-5BBD-4671-A9B9-509C6869D3E7}|Quiz_GUI\\Quiz_GUI.csproj|solutionrelative:quiz_gui\\db_manager\\playerdatamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,41 +38,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PlayerDataManager.cs",
-              "DocumentMoniker": "D:\\quizify\\Quiz_GUI\\Quiz_GUI\\DB_Manager\\PlayerDataManager.cs",
-              "RelativeDocumentMoniker": "Quiz_GUI\\DB_Manager\\PlayerDataManager.cs",
-              "ToolTip": "D:\\quizify\\Quiz_GUI\\Quiz_GUI\\DB_Manager\\PlayerDataManager.cs",
-              "RelativeToolTip": "Quiz_GUI\\DB_Manager\\PlayerDataManager.cs",
-              "ViewState": "AgIAADgAAAAAAAAAAAAkwEAAAABBAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "PlayerDetailsViewModel.cs",
+              "DocumentMoniker": "D:\\quizify\\Quiz_GUI\\Quiz_GUI\\ViewModels\\PlayerDetailsViewModel.cs",
+              "RelativeDocumentMoniker": "Quiz_GUI\\ViewModels\\PlayerDetailsViewModel.cs",
+              "ToolTip": "D:\\quizify\\Quiz_GUI\\Quiz_GUI\\ViewModels\\PlayerDetailsViewModel.cs",
+              "RelativeToolTip": "Quiz_GUI\\ViewModels\\PlayerDetailsViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-18T16:42:45.586Z",
+              "WhenOpened": "2025-03-18T18:24:47.423Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "AdminDataManager.cs",
-              "DocumentMoniker": "D:\\quizify\\Quiz_GUI\\Quiz_GUI\\DB_Manager\\AdminDataManager.cs",
-              "RelativeDocumentMoniker": "Quiz_GUI\\DB_Manager\\AdminDataManager.cs",
-              "ToolTip": "D:\\quizify\\Quiz_GUI\\Quiz_GUI\\DB_Manager\\AdminDataManager.cs",
-              "RelativeToolTip": "Quiz_GUI\\DB_Manager\\AdminDataManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "PlayerDataManager.cs",
+              "DocumentMoniker": "D:\\quizify\\Quiz_GUI\\Quiz_GUI\\DB_Manager\\PlayerDataManager.cs",
+              "RelativeDocumentMoniker": "Quiz_GUI\\DB_Manager\\PlayerDataManager.cs",
+              "ToolTip": "D:\\quizify\\Quiz_GUI\\Quiz_GUI\\DB_Manager\\PlayerDataManager.cs",
+              "RelativeToolTip": "Quiz_GUI\\DB_Manager\\PlayerDataManager.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-18T16:45:39.948Z",
+              "WhenOpened": "2025-03-18T18:13:49.29Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "PlayerListViewModel.cs",
               "DocumentMoniker": "D:\\quizify\\Quiz_GUI\\Quiz_GUI\\ViewModels\\PlayerListViewModel.cs",
               "RelativeDocumentMoniker": "Quiz_GUI\\ViewModels\\PlayerListViewModel.cs",
               "ToolTip": "D:\\quizify\\Quiz_GUI\\Quiz_GUI\\ViewModels\\PlayerListViewModel.cs",
               "RelativeToolTip": "Quiz_GUI\\ViewModels\\PlayerListViewModel.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAYwDcAAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAACgAAAAAAAAAAAAuwDwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-18T16:36:43.601Z",
+              "WhenOpened": "2025-03-18T18:12:03.163Z",
               "EditorCaption": ""
             },
             {
@@ -83,9 +83,9 @@
               "RelativeDocumentMoniker": "Quiz_GUI\\ViewModels\\PlayerViewModel.cs",
               "ToolTip": "D:\\quizify\\Quiz_GUI\\Quiz_GUI\\ViewModels\\PlayerViewModel.cs",
               "RelativeToolTip": "Quiz_GUI\\ViewModels\\PlayerViewModel.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAAwCkAAAApAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAnwBoAAABqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-18T16:36:08.947Z",
+              "WhenOpened": "2025-03-18T18:10:28.167Z",
               "EditorCaption": ""
             }
           ]
