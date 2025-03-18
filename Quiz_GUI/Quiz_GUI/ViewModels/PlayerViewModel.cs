@@ -1,4 +1,5 @@
 ﻿using Quiz_GUI.Commands;
+using Quiz_GUI.DB_Manager;
 using Quiz_GUI.Stores;
 using Quiz_GUI.Views;
 using System;
@@ -32,6 +33,15 @@ namespace Quiz_GUI.ViewModels
             var addPlayerWindow = new AddPlayerWindow();
             if (addPlayerWindow.ShowDialog() == true)
             {
+                PlayerDataManager playerdbManager = new PlayerDataManager();
+                playerdbManager.AddPlayerToDatabase(
+                    addPlayerWindow.Username,
+                    addPlayerWindow.Email,
+                    addPlayerWindow.FullName,
+                    addPlayerWindow.Rank,
+                    addPlayerWindow.Score
+                );
+
                 var newPlayer = new PlayerListItemViewModel(
                     addPlayerWindow.Username,
                     addPlayerWindow.Email,
@@ -43,6 +53,7 @@ namespace Quiz_GUI.ViewModels
                 PlayerListViewModel.AddPlayer(newPlayer);
             }
         }
+
 
 
     }
