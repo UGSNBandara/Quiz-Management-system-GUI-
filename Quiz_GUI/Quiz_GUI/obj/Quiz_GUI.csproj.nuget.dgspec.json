@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sulit\\source\\repos\\Quiz_GUI\\Quiz_GUI\\Quiz_GUI.csproj": {}
+    "D:\\quizify\\Quiz_GUI\\Quiz_GUI\\Quiz_GUI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sulit\\source\\repos\\Quiz_GUI\\Quiz_GUI\\Quiz_GUI.csproj": {
+    "D:\\quizify\\Quiz_GUI\\Quiz_GUI\\Quiz_GUI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sulit\\source\\repos\\Quiz_GUI\\Quiz_GUI\\Quiz_GUI.csproj",
+        "projectUniqueName": "D:\\quizify\\Quiz_GUI\\Quiz_GUI\\Quiz_GUI.csproj",
         "projectName": "Quiz_GUI",
-        "projectPath": "C:\\Users\\sulit\\source\\repos\\Quiz_GUI\\Quiz_GUI\\Quiz_GUI.csproj",
+        "projectPath": "D:\\quizify\\Quiz_GUI\\Quiz_GUI\\Quiz_GUI.csproj",
         "packagesPath": "C:\\Users\\sulit\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sulit\\source\\repos\\Quiz_GUI\\Quiz_GUI\\obj\\",
+        "outputPath": "D:\\quizify\\Quiz_GUI\\Quiz_GUI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -52,6 +52,14 @@
             "DropdownMenu.WPF": {
               "target": "Package",
               "version": "[1.0.0, )"
+            },
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.9.0, )"
             }
           },
           "imports": [

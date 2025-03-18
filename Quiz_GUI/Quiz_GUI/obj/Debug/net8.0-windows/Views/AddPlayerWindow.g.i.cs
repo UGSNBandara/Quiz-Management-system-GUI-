@@ -133,7 +133,7 @@ namespace Quiz_GUI.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Quiz_GUI;V1.0.0.0;component/views/addplayerwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Quiz_GUI;component/views/addplayerwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\AddPlayerWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

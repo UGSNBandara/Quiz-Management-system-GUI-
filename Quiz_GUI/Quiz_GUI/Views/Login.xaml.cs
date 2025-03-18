@@ -1,4 +1,5 @@
-﻿using Quiz_GUI.Stores;
+﻿using Quiz_GUI.DB_Manager;
+using Quiz_GUI.Stores;
 using System.Windows;
 
 namespace Quiz_GUI.Views
@@ -6,26 +7,26 @@ namespace Quiz_GUI.Views
     public partial class Login : Window
     {
         private readonly SelectedPlayerStores _SelectedPlayerStores;
+        private readonly AdminDataManager adminDataManager;
 
         public Login(SelectedPlayerStores selectedPlayerStores)
         {
             InitializeComponent();
             _SelectedPlayerStores = selectedPlayerStores;
+
+            adminDataManager = new AdminDataManager();
         }
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
             // Validate credentials
-            if (UsernameTextBox.Text == "admin" && PasswordBox.Password == "password")
+            if (adminDataManager.ValidateUser(UsernameTextBox.Text, PasswordBox.Password))
             {
-                // Open the MainWindow with the shared SelectedPlayerStores
                 MainWindow mainWindow = new MainWindow
                 {
                     DataContext = new ViewModels.PlayerViewModel(_SelectedPlayerStores)
                 };
                 mainWindow.Show();
-
-                // Close the Login window
                 this.Close();
             }
             else

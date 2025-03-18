@@ -53,7 +53,7 @@ namespace Quiz_GUI.Components {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Quiz_GUI;V1.0.0.0;component/components/playerdetails.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Quiz_GUI;component/components/playerdetails.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Components\PlayerDetails.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
